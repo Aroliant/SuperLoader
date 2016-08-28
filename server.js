@@ -1,8 +1,12 @@
 var csv = require('csv');
 const fs = require("fs");
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
+
+var express = require('express'),
+    app = express(),
+    server = require('http').createServer(app),
+    io = require('socket.io').listen(server),
+
+server.listen(process.env.PORT || 3000);
 
 
 app.use(function(req, res, next) {
@@ -33,7 +37,7 @@ console.log("[SuperLoader] : Data File Read !");
 
 });
 
-io.on('connection', function(socket){
+io.sockets.on('connection', function(socket){
   console.log('Search User Connected');
 	socket.on('keyword', function(keyword){
 
@@ -67,9 +71,3 @@ io.on('connection', function(socket){
 	});
 });
 
-
-
-
-http.listen(3000, function(){
-  console.log('listening on *:3000');
-});
