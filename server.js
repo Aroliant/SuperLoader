@@ -1,16 +1,21 @@
+'use strict';
+
+const express = require('express');
+const socketIO = require('socket.io');
 var csv = require('csv');
 const fs = require("fs");
 
-var express = require('express'),
-    app = express(),
-    server = require('http').createServer(app),
-    io = require('socket.io')({
-  		transports  : ["xhr-polling"],
-  		"polling duration" : 10
-	}).listen(server);
+const PORT = process.env.PORT || 3000;
 
-server.listen(process.env.PORT || 3000);
+const server = express()
+  .use((req, res) => {
+  		res.header("Access-Control-Allow-Origin", "*");
+	  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+	  res.send("Server Running...");
+	})
+  .listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
+const io = socketIO(server);
 
 var companies; 
 
@@ -29,7 +34,8 @@ console.log("[SuperLoader] : Data File Read !");
 
 });
 
-io.sockets.on('connection', function(socket){
+
+io.on('connection', function(socket){
   console.log('Search User Connected');
 	socket.on('keyword', function(keyword){
 
@@ -64,12 +70,6 @@ io.sockets.on('connection', function(socket){
 });
 
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
-app.get('/', function (req, res) {
-   res.send('Hello World');
-});
+
+setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
