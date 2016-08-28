@@ -33,6 +33,7 @@ section {
     display: inline-block;
     position: relative;
     height: 126px;
+    z-index: 9999;
 }
 
 .left {
@@ -86,6 +87,7 @@ section.features{
     background: #FFF;
     display: block;
     margin-top: 30px;
+    z-index: -9999;
 }
 
 h3.features{
