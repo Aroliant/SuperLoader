@@ -1,4 +1,4 @@
-var socket = io("http://superloader.herokuapp.com:3000");
+var socket = io("https://superloader.herokuapp.com");
 
 $("#keyword").bind('input', function() {
     socket.emit("keyword", this.value);
@@ -15,7 +15,7 @@ $("#keyword-nm").bind('input', function() {
 
 function AJAXSearch(keyword) {
     $.ajax({
-        url: "http://superloader-php.herokuapp.com/?keyword=" + keyword,
+        url: "https://superloader-php.herokuapp.com/?keyword=" + keyword,
         method : "GET"
     }).done(function(results) {
 
