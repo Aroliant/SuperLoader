@@ -32,7 +32,7 @@ body {
 section {
     display: inline-block;
     position: relative;
-    height: 300px;
+    height: 126px;
 }
 
 .left {
@@ -78,4 +78,25 @@ form input {
     border-top: 1px solid #EEE;
     padding: 2px 5px 2px 5px;
     background: #FFF;
+}
+
+section.features{
+    width: 500px;
+    margin:0 auto;
+    background: #FFF;
+    display: block;
+    margin-top: 30px;
+}
+
+h3.features{
+    margin: 0;
+    padding: 5px;
+    background: #03A9F4;
+    color: #FFF;
+}
+
+ul.features-list {
+    font-weight: 100;
+    margin: 12px;
+    padding: 7px 0 0 19px;
 }
