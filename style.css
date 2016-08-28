@@ -1,0 +1,81 @@
+html {
+    font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+body {
+    width: 850px;
+    margin: 0 auto;
+    background: #f7f7f7;
+}
+
+.mainHolder {
+    margin-top: 5%;
+    display: inline-block;
+}
+
+.mainHolder h1 {
+    text-align: center;
+    font-weight: 100;
+}
+
+.mainHolder h3 {
+    text-align: center;
+    font-weight: 100;
+    margin-bottom: 60px;
+}
+
+.mainHolder h4 {
+    text-align: center;
+    font-weight: 100;
+}
+
+section {
+    display: inline-block;
+    position: relative;
+    height: 300px;
+}
+
+.left {
+    width: 420px;
+}
+
+.left form {}
+
+.right {
+    width: 420px;
+}
+
+.right form {}
+
+form {}
+
+form input {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+    height: 33px;
+    padding: 5px 5px 5px 15px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid #d6d5d5;
+}
+
+.results {
+    position: absolute;
+    left: 31px;
+    width: 85%;
+    border: 1px solid #86a7ff;
+    border-top: none;
+}
+
+.results ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.results ul li {
+    border-top: 1px solid #EEE;
+    padding: 2px 5px 2px 5px;
+    background: #FFF;
+}

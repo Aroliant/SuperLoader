@@ -24,16 +24,21 @@ console.log("[SuperLoader] : Data File Read !");
 io.on('connection', function(socket){
   console.log('Search User Connected');
 	socket.on('keyword', function(keyword){
+
+		console.log(keyword);
+
+		keyword = keyword.toLowerCase();
 	  
 		var resultcount = 0;
 		var result = [];
-		for(var i = 0 ; i < companies.length ; i++){
+		for(var i = 1 ; i < companies.length ; i++){
 
-			resultcount++;
+			
 
 			if(companies[i][1].toLowerCase().indexOf(keyword)>=0){
 
 				result.push(companies[i][1]);
+				resultcount++;
 			}
 
 

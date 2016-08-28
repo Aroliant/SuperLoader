@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<div class="mainHolder">
+
+<h1>SuperLoader</h1>
+<h3>Super Fast AutoComplete Loader</h3>
+
+<section class="left">
+	<h4>SuperLoader Implementation</h4>
+	<form >
+		<input type="text" name="keyword" placeholder="Search..." id="keyword" autocomplete="off">
+		<div class="results" id="results_sl">
+		</div>
+	</form>
+</section>
+
+<section class="right">
+	<h4>Normal Implementation</h4>
+	<form >
+		<input type="text" name="keyword" placeholder="Search..." id="keyword-nm" autocomplete="off">
+		<div class="results" id="results_normal">
+		</div>
+	</form>
+</section>
+</div>
+</body>
+</html>
+<script src="jquery-3.0.0.min.js"></script>
+<script src="socket.io-1.4.5.js"></script>
+<script src="main.js"></script>
