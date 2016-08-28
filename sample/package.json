@@ -1,0 +1,32 @@
+{
+  "name": "super-loader",
+  "version": "1.0.0",
+  "description": "Super fast search suggestions (autocomplete) loader",
+  "main": "sample/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aroliant/SuperLoader.git"
+  },
+  "keywords": [
+    "autocompelte",
+    "fast autocompelte",
+    "socket autocomplete",
+    "websocket",
+    "fast suggestions",
+    "suggestions loader"
+  ],
+  "author": "Aroliant",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aroliant/SuperLoader/issues"
+  },
+  "homepage": "https://github.com/Aroliant/SuperLoader#readme",
+  "dependencies": {
+    "csv": "^1.1.0",
+    "express": "^4.14.0",
+    "socket.io": "^1.4.8"
+  }
+}

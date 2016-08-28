@@ -1,0 +1,58 @@
+var csv = require('csv');
+const fs = require("fs");
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+
+var companies; 
+
+fs.readFile('nasdaq-company-list.csv', (err, data) => {
+  
+
+console.log("[SuperLoader] : Data File Read !");
+
+	csv.parse(data, function(err, data){
+
+	companies = data;
+
+	console.log("[SuperLoader] : Data Loaded !");
+    
+  });
+
+});
+
+io.on('connection', function(socket){
+  console.log('Search User Connected');
+	socket.on('keyword', function(keyword){
+	  
+		var resultcount = 0;
+		var result = [];
+		for(var i = 0 ; i < companies.length ; i++){
+
+			resultcount++;
+
+			if(companies[i][1].toLowerCase().indexOf(keyword)>=0){
+
+				result.push(companies[i][1]);
+			}
+
+
+			if(resultcount > 7){
+				break;
+			}
+		}
+
+	console.log(JSON.stringify(result));
+
+	socket.emit("result",JSON.stringify(result));
+
+
+	});
+});
+
+
+
+
+http.listen(8081, function(){
+  console.log('listening on *:8081');
+});
