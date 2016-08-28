@@ -4,7 +4,10 @@ const fs = require("fs");
 var express = require('express'),
     app = express(),
     server = require('http').createServer(app),
-    io = require('socket.io').listen(server);
+    io = require('socket.io')({
+  		transports  : ["xhr-polling"],
+  		"polling duration" : 10
+	}).listen(server);
 
 server.listen(process.env.PORT || 3000);
 
@@ -24,11 +27,6 @@ console.log("[SuperLoader] : Data File Read !");
     
   });
 
-});
-
-io.configure(function () {  
-  io.set("transports", ["xhr-polling"]); 
-  io.set("polling duration", 10); 
 });
 
 io.sockets.on('connection', function(socket){
