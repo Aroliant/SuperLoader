@@ -9,17 +9,6 @@ var express = require('express'),
 server.listen(process.env.PORT || 3000);
 
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
-app.get('/', function (req, res) {
-   res.send('Hello World');
-});
-
-
 var companies; 
 
 fs.readFile('nasdaq-company-list.csv', (err, data) => {
@@ -71,3 +60,13 @@ io.sockets.on('connection', function(socket){
 	});
 });
 
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
+app.get('/', function (req, res) {
+   res.send('Hello World');
+});
