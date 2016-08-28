@@ -216,3 +216,4 @@ pip-log.txt
 .mr.developer.cfg
 
 /sample/node_modules/
+/node_modules/
