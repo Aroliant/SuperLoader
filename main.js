@@ -1,4 +1,4 @@
-var socket = io("localhost:8081");
+var socket = io("https://superloader.herokuapp.com:8081");
 
 $("#keyword").bind('input', function() {
     socket.emit("keyword", this.value);
