@@ -11,6 +11,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.get('/', function (req, res) {
+   res.send('Hello World');
+});
+
+
 var companies; 
 
 fs.readFile('nasdaq-company-list.csv', (err, data) => {

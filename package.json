@@ -2,12 +2,12 @@
   "name": "super-loader",
   "version": "1.0.0",
   "description": "Super fast search suggestions (autocomplete) loader",
-  "main": "index.js",
+  "main": "server.js",
   "engines": {
   "node": "6.2.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
